@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 // import 'primeicons/primeicons.css';
 import { Menubar } from 'primereact/menubar';
 // PrimeReact theme (choose one, like Lara, Saga, etc.)
@@ -10,81 +10,38 @@ import 'primereact/resources/primereact.min.css';
 // PrimeIcons for icons (e.g., pi pi-home)
 import 'primeicons/primeicons.css';
 
+// import Agreementtable from '../table/agreementtable';
+
         
 
 
 
-function slider() {
+function Slider() {
+const [visible, setVisible] = useState(true);
 
-     const items = [
-        {
-            icon:"pi pi-bars"
-        },
-        {
-            label: 'Home',
-            icon: 'pi pi-home'
-        },
-        {
-            label: 'Features',
-            icon: 'pi pi-star'
-        },
-        {
-            label: 'Projects',
-            icon: 'pi pi-search',
-            items: [
-                {
-                    label: 'Components',
-                    icon: 'pi pi-bolt'
-                },
-                {
-                    label: 'Blocks',
-                    icon: 'pi pi-server'
-                },
-                {
-                    label: 'UI Kit',
-                    icon: 'pi pi-pencil'
-                },
-                {
-                    label: 'Templates',
-                    icon: 'pi pi-palette',
-                    items: [
-                        {
-                            label: 'Apollo',
-                            icon: 'pi pi-palette'
-                        },
-                        {
-                            label: 'Ultima',
-                            icon: 'pi pi-palette'
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            label: 'Contact',
-            icon: 'pi pi-envelope'
-        }
-    ];
+
+
 
   return (
    <>
- <div className="card">
-            <Menubar model={items} />
-        </div>
+ 
+
+       <div className={` h-screen bg-gray-300 text-teal-400 overflow-hidden transition-all duration-700 ease-in-out 
+  ${visible ? "w-[200px]" : "w-0"}`}>
+  
+  <div className={`${visible ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}>
+   
+  </div>
+
+</div>
 
 
-   <div className="w-[200px] text-teal-400 bg-gray-300 h-screen overflow-none">
-
-    <div>
-        <h1>Slider</h1>
-
-    </div>
 
 
-   </div>
+   
    
    </>
   )
 }
 
-export default slider
+export default Slider
